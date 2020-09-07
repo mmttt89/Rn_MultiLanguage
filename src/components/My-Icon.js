@@ -3,7 +3,7 @@ import { Icon } from "native-base"
 
 const MyIcon = ({ color, style, ...props }) => {
     return (
-        <Icon style={[{ fontSize: 20, color }, style]} {...props} />
+        <Icon style={[{ fontSize: 20, color: color ?? "#bababa" }, style]} {...props} />
     )
 }
 

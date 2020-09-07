@@ -10,7 +10,13 @@ let Strings = new LocalizedStrings({
         LANGUAGE_SELECT: "زمان مورد نظر خود را انتخاب کنید",
         EN: "انگلیسی",
         FA: "فارسی",
-        WELCOME_STRING:"به برنامه فروشگاهی ما خوش آمدید"
+        WELCOME_STRING: "به برنامه فروشگاهی ما خوش آمدید",
+        Enter_to_app: "ورود به برنامه",
+        UserName: "پست الکترونیک یا شماره موبایل",
+        Password: "کلمه عبور خود را وارد نمایید",
+        ForgetPassword: "رمز عبور خود را فراموش کرده اید؟ >",
+        Make_New_Account: "ساخت حساب کاربری جدید",
+        Terms: " با ورود و یا ثبت نام در برنامه شما شرایط و قوانین استفاده از سرویس های سایت و قوانین حریم خصوصی آن را می پذیرید"
     },
     en: {
         MY_APP: "My app",
@@ -20,7 +26,14 @@ let Strings = new LocalizedStrings({
         LANGUAGE_SELECT: "Select your language",
         EN: "English",
         FA: "Farsi",
-        WELCOME_STRING:"ٌWelcome to our shopping app"
+        WELCOME_STRING: "ٌWelcome to our shopping app",
+        Enter_to_app: "Enter to app",
+        UserName: "Email or Phone Number",
+        Password: "Password",
+        ForgetPassword: "Forget your password? >",
+        Make_New_Account: "Make new account",
+        Terms: "By entering or registering in the program, you accept the terms and conditions of using the site services and its privacy rules"
+
     }
 })
 

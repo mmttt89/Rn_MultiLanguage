@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import Colors from "../constants/Colors"
 import Consts from '../constants/Consts'
 
-const MyHeader = () => {
+const MyHeader = ({ label }) => {
     return (
         <View style={styles.container}>
             <Text></Text>

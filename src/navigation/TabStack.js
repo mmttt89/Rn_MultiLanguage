@@ -10,6 +10,7 @@ import ShopScreen from '../screens/shop/Shop';
 import Categories from '../screens/categories/Categories';
 
 import { LanguageContext } from "../services/Language_Context";
+import Colors from '../constants/Colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,7 +45,7 @@ const TabStack = ({ props }) => {
                 },
             })}
             tabBarOptions={{
-                activeTintColor: "red",
+                activeTintColor: Colors.main,
                 inactiveTintColor: 'gray',
                 labelStyle: {
                     fontSize: 14,
