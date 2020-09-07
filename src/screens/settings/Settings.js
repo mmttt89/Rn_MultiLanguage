@@ -1,6 +1,6 @@
 import React, { Component, useContext } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
-import CustomText from '../../components/Custom-Text'
+import MyText from '../../components/My-Text'
 import Strings from '../../constants/Strings'
 import { LanguageContext } from '../../services/Language_Context'
 
@@ -8,9 +8,6 @@ export default class Home extends Component {
     render() {
         return (
             <View>
-                <CustomText>
-                    Home Screen
-                </CustomText>
                 <ChangeLanguageComponent />
             </View>
         )
@@ -22,23 +19,23 @@ const ChangeLanguageComponent = () => {
     return (
         <View style={styles.langContainer}>
             <View style={{ paddingBottom: 10 }}>
-                <CustomText>
+                <MyText>
                     {Strings.LANGUAGE_SELECT}
-                </CustomText>
+                </MyText>
             </View>
             <TouchableOpacity
                 onPress={() => changeLanguage("en")}
                 style={styles.option}>
-                <CustomText>
+                <MyText>
                     {Strings.EN}
-                </CustomText>
+                </MyText>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => changeLanguage("fa")}
                 style={styles.option}>
-                <CustomText>
+                <MyText>
                     {Strings.FA}
-                </CustomText>
+                </MyText>
             </TouchableOpacity>
         </View>
     )

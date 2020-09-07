@@ -12,11 +12,11 @@ import LanguageContextProvider from "./src/services/Language_Context"
 const App = () => {
   return (
     <>
-    <LanguageContextProvider>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
-        <RootNavigation />
-      </SafeAreaView>
+      <LanguageContextProvider>
+        <StatusBar barStyle="dark-content" translucent backgroundColor={"rgba(0,0,0,0.3)"} />
+        <SafeAreaView style={{ flex: 1 }}>
+          <RootNavigation />
+        </SafeAreaView>
       </LanguageContextProvider>
     </>
   );

@@ -9,7 +9,8 @@ let Strings = new LocalizedStrings({
         HOME: "خانه",
         LANGUAGE_SELECT: "زمان مورد نظر خود را انتخاب کنید",
         EN: "انگلیسی",
-        FA: "فارسی"
+        FA: "فارسی",
+        WELCOME_STRING:"به برنامه فروشگاهی ما خوش آمدید"
     },
     en: {
         MY_APP: "My app",
@@ -18,7 +19,8 @@ let Strings = new LocalizedStrings({
         HOME: "Home",
         LANGUAGE_SELECT: "Select your language",
         EN: "English",
-        FA: "Farsi"
+        FA: "Farsi",
+        WELCOME_STRING:"ٌWelcome to our shopping app"
     }
 })
 
