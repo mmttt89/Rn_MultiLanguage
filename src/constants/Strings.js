@@ -3,11 +3,13 @@ import LocalizedStrings from 'react-native-localization';
 let Strings = new LocalizedStrings({
 
     fa: {
+        Dir: "rtl",
         MY_APP: "برنامه من",
         SHOP: "سبد خرید",
         CATEGORIES: "دسته بندی ها",
         HOME: "خانه",
-        LANGUAGE_SELECT: "زمان مورد نظر خود را انتخاب کنید",
+        SETTINGS: "تنظیمات",
+        LANGUAGE: "زبان",
         EN: "انگلیسی",
         FA: "فارسی",
         WELCOME_STRING: "به برنامه فروشگاهی ما خوش آمدید",
@@ -19,11 +21,13 @@ let Strings = new LocalizedStrings({
         Terms: " با ورود و یا ثبت نام در برنامه شما شرایط و قوانین استفاده از سرویس های سایت و قوانین حریم خصوصی آن را می پذیرید"
     },
     en: {
+        Dir: "ltr",
         MY_APP: "My app",
         SHOP: "Shop",
         CATEGORIES: "Categories",
         HOME: "Home",
-        LANGUAGE_SELECT: "Select your language",
+        SETTINGS: "Settings",
+        LANGUAGE: "Language",
         EN: "English",
         FA: "Farsi",
         WELCOME_STRING: "ٌWelcome to our shopping app",

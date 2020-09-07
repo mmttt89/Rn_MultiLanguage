@@ -1,13 +1,16 @@
 import React, { Component, useContext } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
 import MyText from '../../components/My-Text'
+import MyHeader from '../../components/My-Header'
 import Strings from '../../constants/Strings'
 import { LanguageContext } from '../../services/Language_Context'
 
-export default class Home extends Component {
+export default class SettingsScreen extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.container}>
+                <MyHeader label={Strings.SETTINGS} center />
+                <ChangeLanguageComponentQA />
                 <ChangeLanguageComponent />
             </View>
         )
@@ -41,7 +44,36 @@ const ChangeLanguageComponent = () => {
     )
 }
 
+const ChangeLanguageComponentQA = () => {
+    const { changeLanguage } = useContext(LanguageContext)
+    return (
+        <View style={{}}>
+            <View style={{
+                borderBottomWidth: 0.8,
+                height: 60,
+                width: "100%",
+                flexDirection: Strings.Dir == "rtl" ? "row" : "row-reverse",
+                alignItems: 'center',
+                justifyContent: "space-between",
+                paddingHorizontal: 20
+            }}>
+                <View>
+                    <MyText>
+                        {Strings[`${Strings.getLanguage().toUpperCase()}`]}
+                    </MyText>
+                </View>
+                <MyText>
+                    {Strings.LANGUAGE}
+                </MyText>
+            </View>
+        </View>
+    )
+}
+
 const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
     langContainer: {
         marginHorizontal: 100,
         paddingHorizontal: 20,

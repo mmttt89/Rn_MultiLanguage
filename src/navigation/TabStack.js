@@ -36,8 +36,8 @@ const TabStack = ({ props }) => {
                         iconName = 'shapes'
                         iconType = "FontAwesome5"
                     }
-                    else if (route.name === Strings.HOME) {
-                        iconName = 'home'
+                    else if (route.name === Strings.SETTINGS) {
+                        iconName = 'settings'
                         iconType = "Ionicons"
                     }
 
@@ -61,7 +61,7 @@ const TabStack = ({ props }) => {
             <Tab.Screen name={Strings.MY_APP} component={MyAppScreen} />
             <Tab.Screen name={Strings.SHOP} component={ShopScreen} />
             <Tab.Screen name={Strings.CATEGORIES} component={Categories} />
-            <Tab.Screen name={Strings.HOME} component={SettingsScreen} />
+            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
         </Tab.Navigator>
     )
 }

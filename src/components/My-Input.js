@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, Keyboard } from 'react-native'
 import Colors from "../constants/Colors"
 import Consts from '../constants/Consts'
 import MyTouch from "./My-Touch"
+import Strings from '../constants/Strings'
 
 const MyTextInput = ({
     onFocus, onBlur, label, labelStyle, placeholder, style, inputStyle, textInputStyle, iconComponent,
@@ -20,7 +21,11 @@ const MyTextInput = ({
                 </MyText> : null
             }
             <View
-                style={[styles.container, isFocused ? styles.isFocused : null]}>
+                style={[
+                    styles.container,
+                    { flexDirection: Strings.Dir == "rtl" ? "row" : "row-reverse" },
+                    isFocused ? styles.isFocused : null
+                ]}>
                 {inputIcon ?
                     <MyTouch
                         onPress={inputIconAction}
@@ -37,7 +42,9 @@ const MyTextInput = ({
                     onBlur={() => setIsFocused(false)}
                     onFocus={() => setIsFocused(true)}
                     onSubmitEditing={Keyboard.dismiss}
-                    style={[styles.input, textInputStyle]}
+                    style={[styles.input,
+                    { textAlign: Strings.Dir == "rtl" ? "right" : "left" },
+                        textInputStyle]}
                     {...otherProps}
                 />
                 {
@@ -58,7 +65,6 @@ const styles = StyleSheet.create({
         marginTop: 4,
         borderBottomColor: Colors.bg,
         borderBottomWidth: 3,
-        flexDirection: "row",
         backgroundColor: "#f9f9f9",
         borderRadius: 5,
     },
@@ -70,7 +76,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 6,
         minHeight: 12,
         fontFamily: "IRANSans_Normal",
-        
         flexDirection: "row",
         alignItems: 'center'
     },
