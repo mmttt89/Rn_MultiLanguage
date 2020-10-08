@@ -16,9 +16,11 @@ let Strings = new LocalizedStrings({
         Enter_to_app: "ورود به برنامه",
         UserName: "پست الکترونیک یا شماره موبایل",
         Password: "کلمه عبور خود را وارد نمایید",
-        ForgetPassword: "رمز عبور خود را فراموش کرده اید؟ >",
+        ForgetPassword: "رمز عبور خود را فراموش کرده اید؟",
         Make_New_Account: "ساخت حساب کاربری جدید",
-        Terms: " با ورود و یا ثبت نام در برنامه شما شرایط و قوانین استفاده از سرویس های سایت و قوانین حریم خصوصی آن را می پذیرید"
+        Terms: " با ورود و یا ثبت نام در برنامه شما شرایط و قوانین استفاده از سرویس های برنامه و قوانین حریم خصوصی آن را می پذیرید",
+        REGIONAL: "منطقه ایی",
+        DarkMode: "زمینه تاریک",
     },
     en: {
         Dir: "ltr",
@@ -34,10 +36,11 @@ let Strings = new LocalizedStrings({
         Enter_to_app: "Enter to app",
         UserName: "Email or Phone Number",
         Password: "Password",
-        ForgetPassword: "Forget your password? >",
+        ForgetPassword: "Forget your password?",
         Make_New_Account: "Make new account",
-        Terms: "By entering or registering in the program, you accept the terms and conditions of using the site services and its privacy rules"
-
+        Terms: "By entering or registering in the program, you accept the terms and conditions of using the application services and its privacy rules",
+        REGIONAL: "Regional",
+        DarkMode: "Dark Mode",
     }
 })
 

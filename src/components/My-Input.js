@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, Keyboard } from 'react-native'
+import EStyleSheet from "react-native-extended-stylesheet"
 import Colors from "../constants/Colors"
 import Consts from '../constants/Consts'
 import MyTouch from "./My-Touch"
@@ -60,7 +61,7 @@ const MyTextInput = ({
 
 export default MyTextInput
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     container: {
         marginTop: 4,
         borderBottomColor: Colors.bg,
@@ -77,7 +78,8 @@ const styles = StyleSheet.create({
         minHeight: 12,
         fontFamily: "IRANSans_Normal",
         flexDirection: "row",
-        alignItems: 'center'
+        alignItems: 'center',
+        fontSize: "10 rem"
     },
     inputIcon: {
         justifyContent: "center",

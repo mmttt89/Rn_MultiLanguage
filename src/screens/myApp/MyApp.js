@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image } from 'react-native'
+import { View, Image } from 'react-native'
+import EStyleSheet from "react-native-extended-stylesheet"
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import MyText from '../../components/My-Text'
 import Strings from '../../constants/Strings'
 import MyHeader from '../../components/My-Header'
@@ -16,36 +18,36 @@ export default class MyAppScreen extends Component {
             <View style={styles.container}>
                 {/* <MyHeader /> */}
 
-                <View style={[styles.centerize, { paddingTop: 80 }]}>
-                    <Image source={logo} style={{ width: 180, height: 180 }} />
+                <View style={[styles.centerize, { paddingTop: hp("10%") }]}>
+                    <Image source={logo} style={{ width: wp("40%"), height: wp("40%") }} />
                 </View>
                 <View style={styles.form}>
                     <MyTextInput
-                        style={{ marginVertical: 5 }}
+                        style={{ marginVertical: 3 }}
                         placeholder={Strings.UserName}
                     />
                     <MyTextInput
-                        style={{ marginVertical: 5 }}
+                        style={{ marginVertical: 3 }}
                         placeholder={Strings.Password}
                         inputIcon={true}
                         inputIconComponent={<MyIcon type={"Ionicons"} name={"eye"} />}
                     />
-                    <MyText style={{ fontSize: 14, color: Colors.link, paddingTop: 5 }}>
+                    <MyText style={{ color: Colors.link, paddingTop: 5 }}>
                         {Strings.ForgetPassword}
                     </MyText>
-                    <View style={[{ marginTop: 50, marginBottom: 10 }, styles.centerize]}>
+                    <View style={[{ marginTop: hp("3%"), marginBottom: hp("1%") }, styles.centerize]}>
                         <MyButton
                             label={Strings.Enter_to_app}
                             style={{}}
-                            labelStyle={{ color: "#fff" }}
+                            labelStyle={styles.buttonLabel}
                         />
-                        <MyText style={{ color: Colors.main, fontSize: 14, paddingTop: 30 }}>
+                        <MyText style={{ color: Colors.main, paddingTop: hp("3%") }}>
                             {Strings.Make_New_Account}
                         </MyText>
                     </View>
                     <View style={styles.divider} />
                     <View style={[styles.terms, styles.centerize]}>
-                        <MyText style={{ fontSize: 13, textAlign: "center" }}>
+                        <MyText style={styles.termsStrings}>
                             {Strings.Terms}
                         </MyText>
                     </View>
@@ -57,7 +59,7 @@ export default class MyAppScreen extends Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
     centerize: {
         justifyContent: 'center',
         alignItems: 'center'
@@ -68,15 +70,23 @@ const styles = StyleSheet.create({
     },
     form: {
         paddingHorizontal: 20,
-        paddingVertical: 50,
+        paddingVertical: hp("5%"),
     },
     divider: {
         height: 0.8,
         width: "100%",
         backgroundColor: "#d4d4d4",
-        marginVertical: 15
+        marginVertical: hp("1.5%")
+    },
+    buttonLabel: {
+        color: "#fff",
+        fontSize: "10rem"
     },
     terms: {
-        paddingTop: 20
+        paddingTop: hp("2%")
+    },
+    termsStrings: {
+        fontSize: "8.5rem",
+        textAlign: "center"
     },
 })
