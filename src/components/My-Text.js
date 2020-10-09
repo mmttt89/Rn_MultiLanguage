@@ -1,22 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { Text, View } from 'react-native'
 import EStyleSheet from "react-native-extended-stylesheet"
+import { DarkModeContext } from '@Services/DarkMode_Context';
 
-export default class MyText extends Component {
-    render() {
-        let { bold, style } = this.props
-        let fontFamily = "IRANSans_Normal";
-        if (bold) {
-            fontFamily = "IRANSans_Bold";
-        }
+const MyText = ({ bold, style, ...props }) => {
+    const { theme } = useContext(DarkModeContext)
 
-        return (
-            <Text {...this.props} style={[styles.text, { fontFamily }, style]}>
-                {this.props.children}
-            </Text>
-        )
+    let fontFamily = "IRANSans_Normal";
+    if (bold) {
+        fontFamily = "IRANSans_Bold";
     }
+    return (
+        <Text {...this.props} style={[styles.text, { fontFamily, color: theme.text }, style,]}>
+            {props.children}
+        </Text>
+    )
 }
+
+export default MyText
 
 const styles = EStyleSheet.create({
     text: {

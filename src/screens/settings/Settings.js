@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { View } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import EStyleSheet from "react-native-extended-stylesheet";
@@ -7,30 +7,32 @@ import MyHeader from '../../components/My-Header'
 import Strings from '../../constants/Strings'
 import LanguageModal from "./LanguageModal"
 import DarkMode from './DarkMode';
+import { DarkModeContext } from '@Services/DarkMode_Context';
 
-export default class SettingsScreen extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <MyHeader label={Strings.SETTINGS} center />                
-                    <DarkMode/>
-                <>
-                    <SectionHeader title={Strings.REGIONAL} />
-                    <LanguageModal />
-                </>
-            </View>
-        )
-    }
+const SettingsScreen = () => {
+    const { theme } = useContext(DarkModeContext)
+    console.log("THEME", theme)
+    return (
+        <View style={[styles.container, { backgroundColor: theme.bg }]}>
+            <MyHeader label={Strings.SETTINGS} center />
+            <DarkMode />
+            <>
+                <SectionHeader title={Strings.REGIONAL} style={{ backgroundColor: theme.overlay }} />
+                <LanguageModal />
+            </>
+        </View>
+    )
 }
 
-const SectionHeader = ({ title }) => {
+export default SettingsScreen;
+
+const SectionHeader = ({ title, style }) => {
     return (
-        <View style={{
+        <View style={[{
             justifyContent: 'center',
             height: hp("5%"),
-            backgroundColor: "#e3e3e3",
             paddingHorizontal: wp("5%")
-        }}>
+        }, style]}>
             <MyText bold>
                 {title}
             </MyText>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { View } from 'react-native';
+import EStyleSheet from "react-native-extended-stylesheet";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MyIcon from '../components/My-Icon';
 import Strings from "../constants/Strings"
@@ -14,9 +15,9 @@ import Colors from '../constants/Colors';
 
 const Tab = createBottomTabNavigator();
 
-const TabStack = ({ props }) => {
+const TabStack = ({ ...props }) => {
     let c = useContext(LanguageContext)
-    
+
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -41,16 +42,13 @@ const TabStack = ({ props }) => {
                         iconType = "Ionicons"
                     }
 
-                    return <MyIcon type={iconType} name={iconName} color={color} style={{ fontSize: 22 }} />;
+                    return <MyIcon type={iconType} name={iconName} color={color} style={styles.tabIcon} />;
                 },
             })}
             tabBarOptions={{
                 activeTintColor: Colors.main,
                 inactiveTintColor: 'gray',
-                labelStyle: {
-                    fontSize: 14,
-                    fontFamily: "IRANSans_Normal"
-                },
+                labelStyle: styles.tabsLabelStyle,
                 style: {
                     height: 68,
                     paddingBottom: 7,
@@ -59,11 +57,21 @@ const TabStack = ({ props }) => {
             }}
         >
             <Tab.Screen name={Strings.MY_APP} component={MyAppScreen} />
+            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
             <Tab.Screen name={Strings.SHOP} component={ShopScreen} />
             <Tab.Screen name={Strings.CATEGORIES} component={Categories} />
-            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
         </Tab.Navigator>
     )
 }
 
 export default TabStack;
+
+const styles = EStyleSheet.create({
+    tabIcon: {
+        fontSize: "15rem"
+    },
+    tabsLabelStyle: {
+        fontSize: "10rem",
+        fontFamily: "IRANSans_Normal"
+    },
+})

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { View, Image } from 'react-native'
 import EStyleSheet from "react-native-extended-stylesheet"
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
@@ -11,53 +11,54 @@ import MyIcon from '../../components/My-Icon'
 import Colors from '../../constants/Colors'
 import Consts from "../../constants/Consts"
 import logo from "../../assets/images/logo.png"
+import { DarkModeContext } from '@Services/DarkMode_Context';
 
-export default class MyAppScreen extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                {/* <MyHeader /> */}
+const MyAppScreen = () => {
+    const { theme } = useContext(DarkModeContext)
+    return (
+        <View style={[styles.container, { backgroundColor: theme.bg }]}>
 
-                <View style={[styles.centerize, { paddingTop: hp("10%") }]}>
-                    <Image source={logo} style={{ width: wp("40%"), height: wp("40%") }} />
-                </View>
-                <View style={styles.form}>
-                    <MyTextInput
-                        style={{ marginVertical: 3 }}
-                        placeholder={Strings.UserName}
+            <View style={[styles.centerize, { paddingTop: hp("10%") }]}>
+                <Image source={logo} style={{ width: wp("40%"), height: wp("40%") }} />
+            </View>
+            <View style={styles.form}>
+                <MyTextInput
+                    style={{ marginVertical: 3 }}
+                    placeholder={Strings.UserName}
+                />
+                <MyTextInput
+                    style={{ marginVertical: 3 }}
+                    placeholder={Strings.Password}
+                    inputIcon={true}
+                    inputIconComponent={<MyIcon type={"Ionicons"} name={"eye"} />}
+                />
+                <MyText style={{ color: Colors.link, paddingTop: 5 }}>
+                    {Strings.ForgetPassword}
+                </MyText>
+                <View style={[{ marginTop: hp("3%"), marginBottom: hp("1%") }, styles.centerize]}>
+                    <MyButton
+                        label={Strings.Enter_to_app}
+                        style={{}}
+                        labelStyle={styles.buttonLabel}
                     />
-                    <MyTextInput
-                        style={{ marginVertical: 3 }}
-                        placeholder={Strings.Password}
-                        inputIcon={true}
-                        inputIconComponent={<MyIcon type={"Ionicons"} name={"eye"} />}
-                    />
-                    <MyText style={{ color: Colors.link, paddingTop: 5 }}>
-                        {Strings.ForgetPassword}
+                    <MyText style={{ color: Colors.main, paddingTop: hp("3%") }}>
+                        {Strings.Make_New_Account}
                     </MyText>
-                    <View style={[{ marginTop: hp("3%"), marginBottom: hp("1%") }, styles.centerize]}>
-                        <MyButton
-                            label={Strings.Enter_to_app}
-                            style={{}}
-                            labelStyle={styles.buttonLabel}
-                        />
-                        <MyText style={{ color: Colors.main, paddingTop: hp("3%") }}>
-                            {Strings.Make_New_Account}
-                        </MyText>
-                    </View>
-                    <View style={styles.divider} />
-                    <View style={[styles.terms, styles.centerize]}>
-                        <MyText style={styles.termsStrings}>
-                            {Strings.Terms}
-                        </MyText>
-                    </View>
-
+                </View>
+                <View style={styles.divider} />
+                <View style={[styles.terms, styles.centerize]}>
+                    <MyText style={styles.termsStrings}>
+                        {Strings.Terms}
+                    </MyText>
                 </View>
 
             </View>
-        )
-    }
+
+        </View>
+    )
 }
+
+export default MyAppScreen
 
 const styles = EStyleSheet.create({
     centerize: {
