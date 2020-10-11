@@ -1,0 +1,79 @@
+[
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 20,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#EECDA3",
+            "#EF629F"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 32,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#904e95",
+            "#e96443"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 12,
+        "content": "At Ceylon and Spa",
+        "isTerms": true,
+        "colors": [
+            "#4ECDC4",
+            "#556270"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 25,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#e96443",
+            "#904e95"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 18,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#00d2ff",
+            "#928DAB"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 15,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#FFC371",
+            "#FF5F6D"
+        ]
+    },
+    {
+        "id": "cat01",
+        "type": "discount",
+        "percentage": 10,
+        "content": "At selected outlets",
+        "isTerms": true,
+        "colors": [
+            "#F4E2D8",
+            "#BA5370"
+        ]
+    }
+]

@@ -27,7 +27,7 @@ const LanguageModal = () => {
             <Row
                 title={Strings.LANGUAGE}
                 onPress={() => setModalVisible(true)}
-                endIcon={<MyIcon type={"Entypo"} name={Strings.Dir == "rtl" ? "chevron-left" : "chevron-right"} style={{ color: "#586f87" }} />}
+                endIcon={<MyIcon type={"Entypo"} name={Strings.Dir == "rtl" ? "chevron-left" : "chevron-right"} style={{ color: theme.text ?? "#586f87" }} />}
                 firstIcon={<MyIcon type={"MaterialIcons"} name={"language"} style={{ color: "#fff" }} />}
             />
             <Modal

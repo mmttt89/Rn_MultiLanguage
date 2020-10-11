@@ -11,7 +11,7 @@ import { DarkModeContext } from '@Services/DarkMode_Context';
 
 const SettingsScreen = () => {
     const { theme } = useContext(DarkModeContext)
-    console.log("THEME", theme)
+    
     return (
         <View style={[styles.container, { backgroundColor: theme.bg }]}>
             <MyHeader label={Strings.SETTINGS} center />
