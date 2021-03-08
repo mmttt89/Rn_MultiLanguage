@@ -6,6 +6,7 @@ import MyIcon from '../../components/My-Icon'
 import Strings from '../../constants/Strings'
 import { DarkModeContext } from '../../services/DarkMode_Context';
 import Row from "./Row"
+import Colors from '../../constants/Colors';
 
 const DarkMode = () => {
     const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
@@ -20,9 +21,10 @@ const DarkMode = () => {
         <>
             <Row
                 title={Strings.DarkMode}
+                description={Strings.DarkModeOptionDescription}
                 endIcon={<Switch
-                    trackColor={{ false: "#767577", true: "#dbdbdb" }}
-                    thumbColor={isEnabled ? "red" : "#f4f3f4"}
+                    trackColor={{ false: "#767577", true: Colors.main }}
+                    thumbColor={isEnabled ? "#f4f3f4" : "#f4f3f4"}
                     ios_backgroundColor="#3e3e3e"
                     onValueChange={toggleSwitch}
                     value={isEnabled}

@@ -11,12 +11,13 @@ export default class DarkModeContextProvider extends Component {
     }
 
     render() {
-        let theme = {
-            bg: this.state.darkMode ? "#4a4a4a" : "#f4f4f4",
-            overlay: this.state.darkMode ? "#a3a3a3" : "#e3e3e3",
-            text: this.state.darkMode ? "#fff" : "#313131",
-
+        const { darkMode } = this.state;
+        const theme = {
+            bg: darkMode ? "#282832" : "#f4f4f4",
+            overlay: darkMode ? "#a3a3a3" : "#e3e3e3",
+            text: darkMode ? "#fff" : "#313131",
         }
+
         return (
             <DarkModeContext.Provider value={{
                 darkMode: this.state.darkMode,

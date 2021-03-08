@@ -8,6 +8,5 @@ const h = height
 
 export default {
     StatusBar_Height,
-    w, h,
-    
+    w, h,    
 }

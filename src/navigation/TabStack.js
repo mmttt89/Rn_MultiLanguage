@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
-import { View } from 'react-native';
 import EStyleSheet from "react-native-extended-stylesheet";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MyIcon from '../components/My-Icon';
 import Strings from "../constants/Strings"
 
-import SettingsScreen from "../screens/settings/Settings"
-import MyAppScreen from "../screens/myApp/MyApp"
-import ShopScreen from '../screens/shop/Shop';
-import Categories from '../screens/categories/Categories';
+import SettingsScreen from "../screens/settings"
+import MyAppScreen from "../screens/myApp"
+import Coupons from '../screens/coupons';
 
 import { LanguageContext } from "../services/Language_Context";
 import Colors from '../constants/Colors';
@@ -28,14 +26,10 @@ const TabStack = ({ ...props }) => {
                     if (route.name === Strings.MY_APP) {
                         iconName = 'person';
                         iconType = "Ionicons"
-                    }
-                    else if (route.name === Strings.SHOP) {
-                        iconName = 'shopping-cart'
-                        iconType = "FontAwesome5"
-                    }
+                    }                    
                     else if (route.name === Strings.COUPONS) {
-                        iconName = 'shapes'
-                        iconType = "FontAwesome5"
+                        iconName = 'cards'
+                        iconType = "MaterialCommunityIcons"
                     }
                     else if (route.name === Strings.SETTINGS) {
                         iconName = 'settings'
@@ -47,7 +41,7 @@ const TabStack = ({ ...props }) => {
             })}
             tabBarOptions={{
                 activeTintColor: Colors.main,
-                inactiveTintColor: 'gray',
+                inactiveTintColor: Colors.inactive,
                 labelStyle: styles.tabsLabelStyle,
                 style: {
                     height: 68,
@@ -58,9 +52,8 @@ const TabStack = ({ ...props }) => {
             initialRouteName={Strings.COUPONS}
         >
             <Tab.Screen name={Strings.MY_APP} component={MyAppScreen} />
-            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
-            <Tab.Screen name={Strings.SHOP} component={ShopScreen} />
-            <Tab.Screen name={Strings.COUPONS} component={Categories} />
+            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />            
+            <Tab.Screen name={Strings.COUPONS} component={Coupons} />
         </Tab.Navigator>
     )
 }

@@ -1,27 +1,25 @@
-import React, { Component, useContext } from 'react'
-import { View, Image } from 'react-native'
+import React, { useContext } from 'react'
+import { KeyboardAvoidingView, View } from 'react-native'
 import EStyleSheet from "react-native-extended-stylesheet"
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 import MyText from '../../components/My-Text'
 import Strings from '../../constants/Strings'
-import MyHeader from '../../components/My-Header'
 import MyTextInput from '../../components/My-Input'
 import MyButton from '../../components/My-Button'
 import MyIcon from '../../components/My-Icon'
 import Colors from '../../constants/Colors'
-import Consts from "../../constants/Consts"
-import logo from "../../assets/images/logo.png"
 import { DarkModeContext } from '@Services/DarkMode_Context';
+import LogoIcon from '../../assets/icons/Logo'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const MyAppScreen = () => {
     const { theme } = useContext(DarkModeContext)
     return (
-        <View style={[styles.container, { backgroundColor: theme.bg }]}>
-
+        <KeyboardAvoidingView style={[styles.container, { backgroundColor: theme.bg }]}>
             <View style={[styles.centerize, { paddingTop: hp("10%") }]}>
-                <Image source={logo} style={{ width: wp("40%"), height: wp("40%") }} />
+                <LogoIcon />                
             </View>
-            <View style={styles.form}>
+            <ScrollView style={styles.form}>
                 <MyTextInput
                     style={{ marginVertical: 3 }}
                     placeholder={Strings.UserName}
@@ -51,10 +49,8 @@ const MyAppScreen = () => {
                         {Strings.Terms}
                     </MyText>
                 </View>
-
-            </View>
-
-        </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 
@@ -71,7 +67,7 @@ const styles = EStyleSheet.create({
     },
     form: {
         paddingHorizontal: 20,
-        paddingVertical: hp("5%"),
+        paddingVertical: hp("5%"),        
     },
     divider: {
         height: 0.8,

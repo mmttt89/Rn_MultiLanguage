@@ -1,12 +1,11 @@
 import React, { Component, createContext } from 'react';
 import Strings from "../constants/Strings"
-import RNRestart from 'react-native-restart';
 
 export const LanguageContext = createContext();
 
 export default class LanguageContextProvider extends Component {
     state = {
-        lang: "fa"
+        lang: "en"
     }
 
     UNSAFE_componentWillMount(){

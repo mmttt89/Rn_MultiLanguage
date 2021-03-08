@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { Text, View, Image } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
@@ -9,13 +9,14 @@ import { MyText, MyHeader } from '@components'
 import Colors from "@conts/Colors"
 import MockData from "./mock.json"
 import { DarkModeContext } from '@Services/DarkMode_Context';
+import Strings from '../../constants/Strings';
 
 const Categories = () => {
 
     const { theme } = useContext(DarkModeContext)
     return (
         <>
-            <MyHeader label={"Coupons"} center />
+            <MyHeader label={Strings.COUPONS} center />
             <View style={[styles.container, { backgroundColor: theme.bg }]}>
                 <FlatList
                     data={MockData}
