@@ -69,7 +69,7 @@ const styles = EStyleSheet.create({
         fontSize: 20
     },
     tabsLabelStyle: {
-        fontSize: 14,
+        fontSize: Platform.OS == "ios" ? 15 : 13,
         fontFamily: Platform.OS == "android" ? "IRANSans_Normal" : null
     },
 })

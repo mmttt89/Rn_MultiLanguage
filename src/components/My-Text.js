@@ -24,7 +24,7 @@ export default MyText
 
 const styles = EStyleSheet.create({
     text: {
-        fontSize: 15
+        fontSize: Platform.OS == "ios" ? 15 : 13
     },
 })
 

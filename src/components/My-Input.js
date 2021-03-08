@@ -70,7 +70,7 @@ const styles = EStyleSheet.create({
         borderRadius: 5,
     },
     isFocused: {
-        borderBottomColor: "#19c0d3"
+        borderBottomColor: Colors.main
     },
     input: {
         flex: 1,
@@ -80,7 +80,7 @@ const styles = EStyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         fontSize: 13,
-        paddingVertical: Platform.OS == "ios" ? 16 : 0,
+        paddingVertical: Platform.OS == "ios" ? 16 : 10,
     },
     inputIcon: {
         justifyContent: "center",

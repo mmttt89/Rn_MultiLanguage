@@ -47,7 +47,7 @@ const Row = ({ title, description, firstIcon, endIcon, ...props }) => {
                {description ?
                   <MyText numberOfLines={2} ellipsizeMode='tail' style={
                      {
-                        marginTop: 5,
+                        marginTop: Platform.OS == "ios" ? 5 : 0,
                         marginRight: Strings.Dir == "rtl" ? wp("3%") : 0,
                         marginLeft: Strings.Dir == "rtl" ? 0 : wp("3%"),
                         fontSize: 11,
