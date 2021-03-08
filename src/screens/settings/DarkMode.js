@@ -36,23 +36,3 @@ const DarkMode = () => {
 }
 
 export default DarkMode
-
-const styles = EStyleSheet.create({
-    centerize: {
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    container: {
-        flex: 1
-    },
-    modalContent: {
-        backgroundColor: "#fff",
-        paddingHorizontal: wp("3%"),
-        paddingTop: hp("3%"),
-        paddingBottom: hp("1%"),
-        marginHorizontal: 40,
-        borderRadius: 10,
-        maxHeight: hp("60%")
-    },
-})
-

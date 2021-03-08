@@ -11,9 +11,10 @@ import { LanguageContext } from '@Services/Language_Context';
 import { DarkModeContext } from '@Services/DarkMode_Context';
 import { ScrollView } from 'react-native-gesture-handler';
 import Row from "./Row"
+import Colors from '../../constants/Colors';
 
 const LanguageModal = () => {
-   const { changeLanguage } = useContext(LanguageContext)
+   const { changeLanguage, lang } = useContext(LanguageContext)
    const { theme } = useContext(DarkModeContext)
    const [isModalVisible, setModalVisible] = useState(false);
 
@@ -44,12 +45,14 @@ const LanguageModal = () => {
             }}
          >
             <View style={[styles.modalContent, { backgroundColor: theme.bg }]}>
-               <MyText bold style={{ borderBottomWidth: 2, paddingBottom: hp("1%"), borderBottomColor: "#eb8c34" }}>{Strings.LANGUAGE}</MyText>
-               <ScrollView>
-                  <Option title={"English"} onPress={() => _changeLanguage("en")} />
-                  <Option title={"فارسی"} onPress={() => _changeLanguage("fa")} />
-                  <Option title={"Française"} onPress={() => _changeLanguage("fr")} />
-                  <Option title={"Pусский"} onPress={() => _changeLanguage("ru")} />
+               <View style={styles.modalContentHeader}>
+                  <MyText bold>{Strings.LANGUAGE}</MyText>
+               </View>
+               <ScrollView style={{ marginTop: 10 }}>
+                  <Option setModalVisible={setModalVisible} value={"en"} title={"English"} />
+                  <Option setModalVisible={setModalVisible} value={"fa"} title={"فارسی"} />
+                  <Option setModalVisible={setModalVisible} value={"fr"} title={"Française"} />
+                  <Option setModalVisible={setModalVisible} value={"ru"} title={"Pусский"} />
                </ScrollView>
             </View>
          </Modal>
@@ -57,18 +60,25 @@ const LanguageModal = () => {
    )
 }
 
-const Option = ({ title, enTitle, last, flag, ...props }) => {
+const Option = ({ title, value, setModalVisible, ...props }) => {
+   const { changeLanguage, lang } = useContext(LanguageContext);
+
+   const _changeLanguage = () => {
+      setModalVisible(false);
+      changeLanguage(value)
+   }
+
    return (
       <>
-         <MyTouch style={{
-            flexDirection: Strings.Dir == "rtl" ? "row-reverse" : "row",
-            alignItems: 'center',
-            paddingVertical: hp("0.9%"),
-         }}
+         <MyTouch
+            onPress={_changeLanguage}
+            style={[styles.touchOption, {
+               flexDirection: Strings.Dir == "rtl" ? "row-reverse" : "row",
+            }]}
             {...props}
          >
             <View style={[styles.row, { marginTop: 4 }]}>
-               <MyText >{title}</MyText>
+               <MyText style={value == lang ? styles.selectedOption : null} gray>{title}</MyText>
             </View>
          </MyTouch>
       </>
@@ -92,8 +102,21 @@ const styles = EStyleSheet.create({
       backgroundColor: '#fff',
       borderTopRightRadius: 20,
       borderTopLeftRadius: 20,
-      padding: 10,
+      paddingHorizontal: wp("5%"),
+      paddingTop: 25,
       minHeight: wp("100%"),
    },
+   modalContentHeader: {
+      borderBottomWidth: 2,
+      paddingBottom: hp("1%"),
+      borderBottomColor: Colors.main
+   },
+   touchOption: {
+      alignItems: 'center',
+      paddingVertical: hp("1.2%"),
+   },
+   selectedOption: {
+      color: Colors.inactive
+   }
 })
 

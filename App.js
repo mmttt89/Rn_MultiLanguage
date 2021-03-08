@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import RootNavigation from "./src/navigation/Root"
 import LanguageContextProvider from "./src/services/Language_Context";
-import DarkModeContextProvider from "./src/services/DarkMode_Context";
+import DarkModeContextProvider, { DarkModeContext } from "./src/services/DarkMode_Context";
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 let { height, width } = Dimensions.get('window');
@@ -22,18 +22,24 @@ const App = () => {
     <>
       <LanguageContextProvider>
         <DarkModeContextProvider>
-          <StatusBar barStyle="dark-content" translucent backgroundColor={"rgba(0,0,0,0.3)"} />
-          <SafeAreaView style={{ flex: 1 }}>
-            <RootNavigation />
-          </SafeAreaView>
+          <AppContent />
         </DarkModeContextProvider>
       </LanguageContextProvider>
     </>
   );
 };
 
-const styles = StyleSheet.create({
+const AppContent = () => {
+  const { theme, darkMode } = useContext(DarkModeContext)
+  return (
+    <>
+      <StatusBar barStyle={darkMode ? "light-content" : "dark-content"} translucent backgroundColor={"rgba(0,0,0,0.3)"} />
+      <SafeAreaView style={{ flex: 1, backgroundColor: theme.bg }}>
+        <RootNavigation />
+      </SafeAreaView>
+    </>
+  )
+}
 
-});
 
 export default App;

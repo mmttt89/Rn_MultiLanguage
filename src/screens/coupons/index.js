@@ -46,7 +46,7 @@ const Categories = () => {
                                     paddingTop: hp("0.5%")
                                 }}>
                                     <View style={{ flex: 1 }}>
-                                        <MyText style={{ fontSize: 48, color: "#fff", fontFamily: "sanserif", fontWeight: "bold" }}>
+                                        <MyText style={{ fontSize: 48, color: "#fff", fontWeight: "bold" }}>
                                             {`${item?.percentage}%`}
                                         </MyText>
                                     </View>

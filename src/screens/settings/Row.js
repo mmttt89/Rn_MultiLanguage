@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { View } from 'react-native'
+import { Platform, View } from 'react-native'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import EStyleSheet from "react-native-extended-stylesheet";
 import MyText from '../../components/My-Text'
@@ -23,7 +23,7 @@ const Row = ({ title, description, firstIcon, endIcon, ...props }) => {
          }
          {...props}
       >
-         <View style={[styles.centerize, { width: wp("13%")}]}>
+         <View style={styles.iconWrapper}>
             {endIcon ??
                <MyIcon type={"Entypo"} name={Strings.Dir == "rtl" ? "chevron-left" : "chevron-right"} style={{ color: Colors.main }} />
             }
@@ -42,20 +42,23 @@ const Row = ({ title, description, firstIcon, endIcon, ...props }) => {
                      marginLeft: Strings.Dir == "rtl" ? 0 : wp("3%"),
                   }
                }>
-                  {title ?? null}
+                  {title}
                </MyText>
-               <MyText numberOfLines={2} ellipsizeMode='tail' style={
-                  {
-                     marginRight: Strings.Dir == "rtl" ? wp("3%") : 0,
-                     marginLeft: Strings.Dir == "rtl" ? 0 : wp("3%"),
-                     fontSize: 9,
-                  }
-               }>
-                  {description ?? null}
-               </MyText>
+               {description ?
+                  <MyText numberOfLines={2} ellipsizeMode='tail' style={
+                     {
+                        marginTop: 5,
+                        marginRight: Strings.Dir == "rtl" ? wp("3%") : 0,
+                        marginLeft: Strings.Dir == "rtl" ? 0 : wp("3%"),
+                        fontSize: 11,
+                        color: Colors.gray
+                     }
+                  }>
+                     {description ?? null}
+                  </MyText> : null}
             </View>
-            <View style={[styles.centerize, { width: wp("13%")}]}>
-               <View style={[styles.centerize, { backgroundColor: Colors.main, padding: 4, borderRadius: wp("50%") }]}>
+            <View style={styles.iconWrapper}>
+               <View style={[styles.firstIconStyle, { backgroundColor: Colors.main }]}>
                   {firstIcon}
                </View>
             </View>
@@ -73,6 +76,17 @@ const styles = EStyleSheet.create({
    },
    container: {
       flex: 1
+   },
+   iconWrapper: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: wp("13%")
+   },
+   firstIconStyle: {
+      padding: 7,
+      borderRadius: wp("50%"),
+      alignItems: 'center',
+      justifyContent: 'center'
    },
    modalContent: {
       backgroundColor: "#fff",

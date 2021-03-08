@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, Keyboard } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Keyboard, Platform } from 'react-native'
 import EStyleSheet from "react-native-extended-stylesheet"
 import Colors from "../constants/Colors"
 import Consts from '../constants/Consts'
@@ -76,10 +76,11 @@ const styles = EStyleSheet.create({
         flex: 1,
         paddingHorizontal: 6,
         minHeight: 12,
-        fontFamily: "IRANSans_Normal",
+        fontFamily: Platform.OS == "android" ? "IRANSans_Normal" : null,
         flexDirection: "row",
         alignItems: 'center',
-        fontSize: "10 rem"
+        fontSize: 13,
+        paddingVertical: Platform.OS == "ios" ? 16 : 0,
     },
     inputIcon: {
         justifyContent: "center",

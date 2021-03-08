@@ -9,12 +9,15 @@ import MyAppScreen from "../screens/myApp"
 import Coupons from '../screens/coupons';
 
 import { LanguageContext } from "../services/Language_Context";
+import { DarkModeContext } from "../services/DarkMode_Context"
 import Colors from '../constants/Colors';
+import { Platform } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const TabStack = ({ ...props }) => {
-    let c = useContext(LanguageContext)
+    const c = useContext(LanguageContext);
+    const { theme } = useContext(DarkModeContext)
 
     return (
         <Tab.Navigator
@@ -26,7 +29,7 @@ const TabStack = ({ ...props }) => {
                     if (route.name === Strings.MY_APP) {
                         iconName = 'person';
                         iconType = "Ionicons"
-                    }                    
+                    }
                     else if (route.name === Strings.COUPONS) {
                         iconName = 'cards'
                         iconType = "MaterialCommunityIcons"
@@ -46,13 +49,14 @@ const TabStack = ({ ...props }) => {
                 style: {
                     height: 68,
                     paddingBottom: 7,
-                    paddingTop: 5
+                    paddingTop: 5,
+                    backgroundColor: theme.bg
                 },
             }}
             initialRouteName={Strings.COUPONS}
         >
             <Tab.Screen name={Strings.MY_APP} component={MyAppScreen} />
-            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />            
+            <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
             <Tab.Screen name={Strings.COUPONS} component={Coupons} />
         </Tab.Navigator>
     )
@@ -62,10 +66,10 @@ export default TabStack;
 
 const styles = EStyleSheet.create({
     tabIcon: {
-        fontSize: "15rem"
+        fontSize: 20
     },
     tabsLabelStyle: {
-        fontSize: "10rem",
-        fontFamily: "IRANSans_Normal"
+        fontSize: 14,
+        fontFamily: Platform.OS == "android" ? "IRANSans_Normal" : null
     },
 })
