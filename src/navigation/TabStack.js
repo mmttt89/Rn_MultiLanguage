@@ -53,7 +53,7 @@ const TabStack = ({ ...props }) => {
                     backgroundColor: theme.bg
                 },
             }}
-            initialRouteName={Strings.COUPONS}
+            initialRouteName={Strings.MY_APP}
         >
             <Tab.Screen name={Strings.MY_APP} component={MyAppScreen} />
             <Tab.Screen name={Strings.SETTINGS} component={SettingsScreen} />
