@@ -14,16 +14,18 @@ extra step for ios:
 ### Screen shots
 <p float="left">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-login-light.png" width="250" aspectRatio="1/2">
-<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-modal-light.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-setting-dark.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-setting-light.png" width="250" aspectRatio="1/2">
-<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-login-dark.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fr-login-light.png" width="250" aspectRatio="1/2">
+<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fr-setting-dark.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fr-setting-light.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/ru-login-dark.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/ru-modal-dark.png" width="250" aspectRatio="1/2">
+<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/ru-setting-light.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fa-login-dark.png" width="250" aspectRatio="1/2">
 <img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fa-setting-dark.png" width="250" aspectRatio="1/2">
+<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/fa-login-light.png" width="250" aspectRatio="1/2">
+<img src="https://github.com/mmttt89/Rn_MultiLanguage/blob/master/Screenshots/en-modal-light.png" width="250" aspectRatio="1/2">
 </p>
 
 
