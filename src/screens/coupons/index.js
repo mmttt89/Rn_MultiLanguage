@@ -12,8 +12,8 @@ import { DarkModeContext } from '@Services/DarkMode_Context';
 import Strings from '../../constants/Strings';
 
 const Categories = () => {
-
     const { theme } = useContext(DarkModeContext)
+    
     return (
         <>
             <MyHeader label={Strings.COUPONS} center />
